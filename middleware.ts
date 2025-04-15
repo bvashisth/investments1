@@ -52,12 +52,19 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
+     * Only run middleware on specific paths:
+     * - Main pages
+     * - Account-related pages
+     * - Sensitive information pages
      */
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/",
+    "/about",
+    "/team",
+    "/our-mission",
+    "/initiatives",
+    "/mobile",
+    "/loans/:path*",
+    "/open-account/:path*",
+    "/terms-and-conditions",
   ],
 }
