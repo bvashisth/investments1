@@ -101,6 +101,9 @@ export function Footer() {
           <div className="mt-4 space-x-4">
             <PrivacyPolicyModal />
             <TermsAndConditionsModal />
+            <Link href="/eula" className="text-sm text-[#4a5d7a] hover:text-[#3b82f6]">
+              EULA
+            </Link>
           </div>
         </div>
       </div>
