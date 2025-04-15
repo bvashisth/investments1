@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { ArrowRight, Globe, Users, Wallet, LineChart, BookOpen, Building } from "lucide-react"
-import Image from "next/image"
+import { Globe, Users, Wallet, LineChart, BookOpen, Building } from "lucide-react"
 import HolographicImage from "@/components/HolographicImage"
 import { InfoModal } from "@/components/InfoModal"
 import { GlobalReachModal } from "@/components/GlobalReachModal"

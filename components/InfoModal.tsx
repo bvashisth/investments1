@@ -1,5 +1,5 @@
-'use client'
-import { useState } from 'react'
+"use client"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Globe, Smartphone, Wifi } from 'lucide-react'
+import { Globe, Smartphone, Wifi } from "lucide-react"
 
 export function InfoModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +33,9 @@ export function InfoModal() {
             <Smartphone className="h-10 w-10 text-[#6b6570]" />
             <div>
               <h4 className="font-semibold text-[#2d2a2e]">Mobile Top-up</h4>
-              <p className="text-sm text-[#4a4749]">International mobile top-up for over 150+ countries, and more than 850 mobile operators.</p>
+              <p className="text-sm text-[#4a4749]">
+                International mobile top-up for over 150+ countries, and more than 850 mobile operators.
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -51,7 +53,9 @@ export function InfoModal() {
             </div>
           </div>
         </div>
-        <Button onClick={() => setIsOpen(false)} className="w-full">Close</Button>
+        <Button onClick={() => setIsOpen(false)} className="w-full">
+          Close
+        </Button>
       </DialogContent>
     </Dialog>
   )

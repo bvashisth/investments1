@@ -5,7 +5,6 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Moon, Sun } from "lucide-react"
-import { ContactModal } from "./ContactModal"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function Header() {
@@ -63,7 +62,6 @@ export function Header() {
             <Link href="/initiatives" className="text-sm text-[#2d2a2e] hover:text-[#3b82f6]">
               Initiatives
             </Link>
-            <ContactModal />
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -148,9 +146,7 @@ export function Header() {
             >
               Initiatives
             </Link>
-            <div className="px-4 py-2">
-              <ContactModal />
-            </div>
+
             <div className="space-y-2 px-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

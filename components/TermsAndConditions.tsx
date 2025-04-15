@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import { useEffect } from 'react'
+import { useEffect } from "react"
 
 export function TermsAndConditions() {
   useEffect(() => {
-    const script = document.createElement('script')
+    const script = document.createElement("script")
     script.src = "https://app.termly.io/policy-viewer/policy.html?policyUUID=19b718ce-df45-479d-be3e-620fe745de18"
     script.async = true
     document.body.appendChild(script)
