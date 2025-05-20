@@ -4,17 +4,17 @@ import { ServiceLaunchPopup } from "@/components/ServiceLaunchPopup"
 
 export default function MobilePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#e0dce3] pt-20">
+    <div className="flex flex-col min-h-screen bg-sky-blue/20 pt-20">
       <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-[#2d2a2e]">Mobile Services</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-prussian-blue">Mobile Services</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* eSIM Card */}
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <Wifi className="h-8 w-8 text-[#6b6570] mb-2" />
-              <CardTitle className="text-[#2d2a2e]">Global eSIM</CardTitle>
-              <CardDescription className="text-[#4a4749]">
+              <Wifi className="h-8 w-8 text-blue-green mb-2" />
+              <CardTitle className="text-prussian-blue">Global eSIM</CardTitle>
+              <CardDescription className="text-prussian-blue/70">
                 Seamless, uninterrupted, global connectivity for your IoT and roaming devices.
               </CardDescription>
             </CardHeader>
@@ -36,9 +36,9 @@ export default function MobilePage() {
           {/* Mobile Top-Up Card */}
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <Smartphone className="h-8 w-8 text-[#6b6570] mb-2" />
-              <CardTitle className="text-[#2d2a2e]">Mobile Top-Up</CardTitle>
-              <CardDescription className="text-[#4a4749]">
+              <Smartphone className="h-8 w-8 text-blue-green mb-2" />
+              <CardTitle className="text-prussian-blue">Mobile Top-Up</CardTitle>
+              <CardDescription className="text-prussian-blue/70">
                 International mobile top-up for over 150+ countries and 850+ operators.
               </CardDescription>
             </CardHeader>
@@ -60,9 +60,9 @@ export default function MobilePage() {
           {/* E-gift Cards */}
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <Gift className="h-8 w-8 text-[#6b6570] mb-2" />
-              <CardTitle className="text-[#2d2a2e]">E-gift Cards</CardTitle>
-              <CardDescription className="text-[#4a4749]">
+              <Gift className="h-8 w-8 text-blue-green mb-2" />
+              <CardTitle className="text-prussian-blue">E-gift Cards</CardTitle>
+              <CardDescription className="text-prussian-blue/70">
                 Make gift-giving easy with our selection of e-vouchers.
               </CardDescription>
             </CardHeader>
@@ -84,9 +84,9 @@ export default function MobilePage() {
           {/* Utility Payments */}
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <Zap className="h-8 w-8 text-[#6b6570] mb-2" />
-              <CardTitle className="text-[#2d2a2e]">Utility Payments</CardTitle>
-              <CardDescription className="text-[#4a4749]">
+              <Zap className="h-8 w-8 text-blue-green mb-2" />
+              <CardTitle className="text-prussian-blue">Utility Payments</CardTitle>
+              <CardDescription className="text-prussian-blue/70">
                 Pay utility bills for friends and family with ease.
               </CardDescription>
             </CardHeader>

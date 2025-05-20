@@ -6,7 +6,7 @@ import { CheckCircle, Building2, BarChart3, Shield } from "lucide-react"
 export default function CommercialLoanPage() {
   return (
     <div className="container mx-auto px-4 py-8 pt-20">
-      <h1 className="text-4xl font-bold mb-8 text-center text-[#2d2a2e]">Commercial Loan</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-prussian-blue">Commercial Loan</h1>
 
       <Card className="mb-8">
         <CardHeader>
@@ -22,7 +22,7 @@ export default function CommercialLoanPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="flex items-start gap-3">
-              <Building2 className="h-6 w-6 text-[#3b82f6] mt-1" />
+              <Building2 className="h-6 w-6 text-blue-green mt-1" />
               <div>
                 <h3 className="font-semibold mb-2">Business Expansion</h3>
                 <p className="text-sm text-[#4a4749]">
@@ -97,7 +97,7 @@ export default function CommercialLoanPage() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col sm:flex-row gap-4">
-          <Button asChild className="w-full sm:w-auto">
+          <Button asChild className="w-full sm:w-auto bg-blue-green text-white hover:bg-prussian-blue">
             <Link href="/open-account/business">Open a Business Account</Link>
           </Button>
           <Button asChild variant="outline" className="w-full sm:w-auto">

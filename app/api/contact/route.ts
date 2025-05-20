@@ -18,8 +18,8 @@ export async function POST(req: Request) {
   try {
     // Send email
     await transporter.sendMail({
-      from: `"FermionEMP Contact Form" <${process.env.SMTP_USER}>`,
-      to: "support@fermionemp.com", // Updated email domain
+      from: `"Lao construction Bank Contact Form" <${process.env.SMTP_USER}>`,
+      to: "support@example.com", // Replace with the actual LCB support email
       subject: "New Contact Form Submission",
       text: `Name: ${name}
 Email: ${email}

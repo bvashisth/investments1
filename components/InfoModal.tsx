@@ -17,7 +17,7 @@ export function InfoModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="bg-white text-[#2d2a2e] hover:bg-[#f0ecf3]">
+        <Button variant="outline" className="bg-white text-prussian-blue hover:bg-sky-blue/20">
           Learn About Our Services
         </Button>
       </DialogTrigger>
@@ -30,10 +30,10 @@ export function InfoModal() {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex items-center gap-4">
-            <Smartphone className="h-10 w-10 text-[#6b6570]" />
+            <Smartphone className="h-10 w-10 text-blue-green" />
             <div>
-              <h4 className="font-semibold text-[#2d2a2e]">Mobile Top-up</h4>
-              <p className="text-sm text-[#4a4749]">
+              <h4 className="font-semibold text-prussian-blue">Mobile Top-up</h4>
+              <p className="text-sm text-prussian-blue/70">
                 International mobile top-up for over 150+ countries, and more than 850 mobile operators.
               </p>
             </div>

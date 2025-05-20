@@ -18,9 +18,9 @@ export function EULA() {
     <div>
       <h1 className="text-3xl font-bold mb-4">End-User License Agreement (EULA)</h1>
       <p className="mb-4">
-        FremionEMP - FermionEMP has designed a comprehensive digital banking platform designed to facilitate secure,
-        efficient, and user-friendly financial transactions. Built with scalability and security in mind. and
-        Headquarters in Switzerland.
+        Lao construction Bank - Lao construction Bank has designed a comprehensive digital banking platform designed to
+        facilitate secure, efficient, and user-friendly financial transactions. Built with scalability and security in
+        mind. and Headquarters in Vientiane, Lao.
       </p>
       <div name="termly-embed" data-id="06f6c24a-5bba-4ba6-9794-c06df5178fdd"></div>
     </div>

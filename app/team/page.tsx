@@ -8,8 +8,8 @@ export default function TeamPage() {
     <div className="container mx-auto px-4 py-8 pt-20">
       <h1 className="text-4xl font-bold mb-8 text-center text-[#2d2a2e]">Our Leadership Team</h1>
       <p className="text-center text-lg mb-12 text-[#4a5d7a] max-w-3xl mx-auto">
-        Meet the visionaries behind FremionEMP who are dedicated to revolutionizing financial inclusion and making
-        banking accessible to all.
+        Meet the visionaries behind Lao construction Bank who are dedicated to revolutionizing financial inclusion and
+        making banking accessible to all.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -84,8 +84,9 @@ export default function TeamPage() {
                 underbanked communities and developing tailored financial products and services to meet their needs.
               </p>
               <p className="text-sm text-[#4a5d7a]">
-                His vision and leadership are pivotal in driving Bank's mission of financial inclusion, ensuring that
-                our services reach those who need them most while maintaining sustainable growth and impact.
+                His vision and leadership are pivotal in driving Lao construction Bank's mission of financial inclusion,
+                ensuring that our services reach those who need them most while maintaining sustainable growth and
+                impact.
               </p>
               <div className="pt-4">
                 <Link href="#" className="text-[#3b82f6] hover:text-[#2563eb] inline-flex items-center">

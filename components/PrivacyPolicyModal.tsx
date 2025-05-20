@@ -14,30 +14,28 @@ export function PrivacyPolicyModal({ triggerClassName }: PrivacyPolicyModalProps
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="link" className={triggerClassName || "text-sm text-[#4a5d7a] hover:text-[#3b82f6]"}>
+        <Button variant="link" className={triggerClassName || "text-sm text-prussian-blue hover:text-blue-green"}>
           Privacy Policy
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-[#2d2a2e] mb-4">Privacy Policy</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-prussian-blue mb-4">Privacy Policy</DialogTitle>
         </DialogHeader>
         <div className="prose prose-sm max-w-none">
           <p className="text-sm text-muted-foreground mb-4">Last updated January 08, 2025</p>
 
           <div className="space-y-4">
             <p>
-              This Privacy Notice for FermionEMP ("we," "us," or "our"), describes how and why we might access, collect,
-              store, use, and/or share ("process") your personal information when you use our services ("Services"),
-              including when you:
+              This Privacy Notice for Lao construction Bank ("we," "us," or "our"), describes how and why we might
+              access, collect, store, use, and/or share ("process") your personal information when you use our services
+              ("Services"), including when you:
             </p>
             <ul className="list-disc pl-5 space-y-2">
+              <li>Visit our website at #, or any website of ours that links to this Privacy Notice</li>
               <li>
-                Visit our website at https://fermionemp.com, or any website of ours that links to this Privacy Notice
-              </li>
-              <li>
-                Download and use our mobile application (fermionemp), or any other application of ours that links to
-                this Privacy Notice
+                Download and use our mobile application (lcb), or any other application of ours that links to this
+                Privacy Notice
               </li>
               <li>Engage with us in other related ways, including any sales, marketing, or events</li>
             </ul>
@@ -48,7 +46,7 @@ export function PrivacyPolicyModal({ triggerClassName }: PrivacyPolicyModalProps
                 Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible
                 for making decisions about how your personal information is processed. If you do not agree with our
                 policies and practices, please do not use our Services. If you still have any questions or concerns,
-                please contact us at privacy@fermionemp.com.
+                please contact us at privacy@example.com.
               </p>
             </div>
 
@@ -109,7 +107,7 @@ export function PrivacyPolicyModal({ triggerClassName }: PrivacyPolicyModalProps
                 time.
               </p>
               <p className="mt-4">
-                If you have questions or comments about your privacy rights, you may email us at privacy@fermionemp.com.
+                If you have questions or comments about your privacy rights, you may email us at privacy@example.com.
               </p>
             </section>
 
@@ -117,12 +115,12 @@ export function PrivacyPolicyModal({ triggerClassName }: PrivacyPolicyModalProps
               <h2 className="text-xl font-bold mt-6 mb-4">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
               <p>
                 If you have questions or comments about this notice, you may contact our Data Protection Officer (DPO)
-                by email at compliance@fermionemp.com, or contact us by post at:
+                by email at compliance@example.com, or contact us by post at:
               </p>
               <div className="mt-4">
-                <p className="font-semibold">FermionEMP</p>
+                <p className="font-semibold">Lao construction Bank</p>
                 <p>Data Protection Officer</p>
-                <p>Headquarters in Switzerland</p>
+                <p>Headquarters in Vientiane, Lao</p>
               </div>
             </section>
           </div>

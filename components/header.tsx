@@ -30,18 +30,18 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-white backdrop-blur-md z-50 border-b border-[#3b82f6]/20">
+    <header className="fixed top-0 w-full bg-white backdrop-blur-md z-50 border-b border-sky-blue/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 space-x-3">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/finelogo-bNbJPAwJxGke82YrUL2PDV675thHJz.png"
-              alt="FermionEMP"
-              width={32}
-              height={32}
-              className="object-contain"
+              src="/images/lcb-logo.png"
+              alt="Lao construction Bank"
+              width={40}
+              height={40}
+              className="object-contain rounded-full"
             />
-            <span className="font-bold text-xl text-[#2d2a2e]">FermionEMP</span>
+            <span className="font-bold text-xl text-prussian-blue">Lao construction Bank</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,13 +54,13 @@ export function Header() {
               )}
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Link href="/about" className="text-sm text-[#2d2a2e] hover:text-[#3b82f6]">
+            <Link href="/about" className="text-sm text-prussian-blue hover:text-blue-green">
               About Us
             </Link>
-            <Link href="/mobile" className="text-sm text-[#2d2a2e] hover:text-[#3b82f6]">
+            <Link href="/mobile" className="text-sm text-prussian-blue hover:text-blue-green">
               Mobile
             </Link>
-            <Link href="/initiatives" className="text-sm text-[#2d2a2e] hover:text-[#3b82f6]">
+            <Link href="/initiatives" className="text-sm text-prussian-blue hover:text-blue-green">
               Initiatives
             </Link>
             <ContactModal />
@@ -69,29 +69,19 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="text-[#2d2a2e] dark:text-gray-300 border-[#2d2a2e] dark:border-gray-300 hover:bg-[#2d2a2e] dark:hover:bg-gray-700 hover:text-white"
+                  className="text-prussian-blue dark:text-gray-300 border-prussian-blue dark:border-gray-300 hover:bg-prussian-blue dark:hover:bg-gray-700 hover:text-white"
                 >
                   Login <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <Link
-                    href="https://personal.fermionemp.com/ui/login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
+                  <Link href="#" className="w-full">
                     Personal Banking Login
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link
-                    href="https://business.fermionemp.com/ui/login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
+                  <Link href="#" className="w-full">
                     Business Banking Login
                   </Link>
                 </DropdownMenuItem>
@@ -100,7 +90,7 @@ export function Header() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-[#3b82f6] text-white hover:bg-[#2563eb]">
+                <Button className="bg-blue-green text-white hover:bg-prussian-blue">
                   Open Account <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -120,7 +110,7 @@ export function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-[#2d2a2e]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden text-prussian-blue" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -136,15 +126,21 @@ export function Header() {
               )}
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Link href="/about" className="block px-4 py-2 text-[#2d2a2e] hover:bg-[#e2eaf3] dark:hover:bg-gray-200">
+            <Link
+              href="/about"
+              className="block px-4 py-2 text-prussian-blue hover:bg-sky-blue/20 dark:hover:bg-gray-200"
+            >
               About Us
             </Link>
-            <Link href="/mobile" className="block px-4 py-2 text-[#2d2a2e] hover:bg-[#e2eaf3] dark:hover:bg-gray-200">
+            <Link
+              href="/mobile"
+              className="block px-4 py-2 text-prussian-blue hover:bg-sky-blue/20 dark:hover:bg-gray-200"
+            >
               Mobile
             </Link>
             <Link
               href="/initiatives"
-              className="block px-4 py-2 text-[#2d2a2e] hover:bg-[#e2eaf3] dark:hover:bg-gray-200"
+              className="block px-4 py-2 text-prussian-blue hover:bg-sky-blue/20 dark:hover:bg-gray-200"
             >
               Initiatives
             </Link>
@@ -156,24 +152,19 @@ export function Header() {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="outline"
-                    className="w-full text-[#2d2a2e] dark:text-gray-300 border-[#2d2a2e] dark:border-gray-300 hover:bg-[#2d2a2e] dark:hover:bg-gray-700 hover:text-white"
+                    className="w-full text-prussian-blue dark:text-gray-300 border-prussian-blue dark:border-gray-300 hover:bg-prussian-blue dark:hover:bg-gray-700 hover:text-white"
                   >
                     Login <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <Link href="/login/personal" className="w-full">
+                    <Link href="#" className="w-full">
                       Personal Banking Login
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link
-                      href="https://business.fermionemp.com/ui/login"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full"
-                    >
+                    <Link href="#" className="w-full">
                       Business Banking Login
                     </Link>
                   </DropdownMenuItem>
@@ -181,7 +172,7 @@ export function Header() {
               </DropdownMenu>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="w-full bg-[#3b82f6] text-white hover:bg-[#2563eb]">
+                  <Button className="w-full bg-blue-green text-white hover:bg-prussian-blue">
                     Open Account <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>

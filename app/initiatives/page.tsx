@@ -4,21 +4,21 @@ import { InitiativePopup } from "@/components/InitiativePopup"
 
 export default function InitiativesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#e0dce3] pt-20">
+    <div className="flex flex-col min-h-screen bg-sky-blue/20 pt-20">
       <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-[#2d2a2e]">Our Initiatives</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-prussian-blue">Our Initiatives</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="bg-white shadow-lg">
             <CardHeader>
-              <Users className="h-8 w-8 text-[#6b6570] mb-2" />
-              <CardTitle className="text-[#2d2a2e]">Financial Inclusion</CardTitle>
-              <CardDescription className="text-[#4a4749]">
+              <Users className="h-8 w-8 text-blue-green mb-2" />
+              <CardTitle className="text-prussian-blue">Financial Inclusion</CardTitle>
+              <CardDescription className="text-prussian-blue/70">
                 Bridging the gap for underbanked and unbanked communities
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-[#4a4749] mb-4">
+              <p className="text-prussian-blue/70 mb-4">
                 We offer low-cost, no-frills banking solutions and digital access to financial services, making banking
                 accessible to all.
               </p>
