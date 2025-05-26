@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Users, HandIcon as HandHelp, TrendingUp, School, MessageCircle } from "lucide-react"
+import { Users, Heart, TrendingUp, School, MessageCircle } from "lucide-react"
 
 export function CommunityFocusModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +27,7 @@ export function CommunityFocusModal() {
             Community Focus: Empowering Local Solutions for Lasting Impact
           </DialogTitle>
           <DialogDescription className="text-[#4a4749]">
-            At FermionEMP, we recognize that true progress begins at the community level. That's why our commitment to
+            At SparcoDB, we recognize that true progress begins at the community level. That's why our commitment to
             financial inclusion is deeply rooted in understanding the unique challenges and opportunities within the
             regions we serve. By collaborating closely with local organizations, governments, and community leaders, we
             ensure our solutions are not only innovative but also meaningful and impactful.
@@ -47,7 +47,7 @@ export function CommunityFocusModal() {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <HandHelp className="h-6 w-6 text-[#6b6570] mt-1" />
+            <Heart className="h-6 w-6 text-[#6b6570] mt-1" />
             <div>
               <h4 className="font-semibold text-[#2d2a2e] text-lg">Building Strategic Partnerships</h4>
               <p className="text-sm text-[#4a4749]">
@@ -95,7 +95,7 @@ export function CommunityFocusModal() {
         </div>
         <div className="mt-6">
           <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">
-            FermionEMP: Rooted in Communities, Building a Better Tomorrow
+            SparcoDB: Rooted in Communities, Building a Better Tomorrow
           </h3>
           <p className="text-[#4a4749]">
             Through collaboration, understanding, and a shared commitment to growth, we are transforming lives and

@@ -1,7 +1,5 @@
 "use client"
 import { useState } from "react"
-import type React from "react"
-
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -64,14 +62,14 @@ export function ContactModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="link" className="text-sm text-blue-green hover:text-prussian-blue">
+        <Button variant="link" className="text-sm text-[#1e3a5f] hover:text-[#3b82f6]">
           Contact Us
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-prussian-blue mb-2">Contact Us</DialogTitle>
-          <DialogDescription className="text-prussian-blue/70">
+          <DialogTitle className="text-2xl font-bold text-[#2d2a2e] mb-2">Contact Us</DialogTitle>
+          <DialogDescription className="text-[#4a4749]">
             Fill out the form below and we'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
@@ -88,11 +86,7 @@ export function ContactModal() {
             <Label htmlFor="message">Message</Label>
             <Textarea id="message" name="message" required />
           </div>
-          <Button
-            type="submit"
-            className="w-full bg-blue-green text-white hover:bg-prussian-blue"
-            disabled={isSubmitting}
-          >
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>

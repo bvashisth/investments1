@@ -102,7 +102,7 @@ export default function BusinessAccountForm() {
       // Show success message
       alert(`Your business account application has been generated as a PDF. 
 
-Please email the following to accounts@fermionemp.com:
+Please email the following to accounts@sparco.db:
 1. The downloaded PDF application form
 2. Certificate of Incorporation
 3. Business Registration Documents
@@ -174,21 +174,71 @@ Our team will review your application and contact you within 2-3 business days.`
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        {currentStep === 1 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Business Information</CardTitle>
-              <CardDescription>Please provide your business details</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
+    <Form {...form} onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      {currentStep === 1 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Business Information</CardTitle>
+            <CardDescription>Please provide your business details</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="legalBusinessName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Legal Business Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="dbaName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Doing Business As (DBA) Name (if applicable)</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="businessStructure"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Business Structure</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select business structure" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Sole Proprietorship">Sole Proprietorship</SelectItem>
+                      <SelectItem value="Partnership">Partnership</SelectItem>
+                      <SelectItem value="LLC">Limited Liability Company (LLC)</SelectItem>
+                      <SelectItem value="Corporation">Corporation</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {form.watch("businessStructure") === "Other" && (
               <FormField
                 control={form.control}
-                name="legalBusinessName"
+                name="otherBusinessStructure"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Legal Business Name</FormLabel>
+                    <FormLabel>Other Business Structure</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -196,50 +246,174 @@ Our team will review your application and contact you within 2-3 business days.`
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="dbaName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Doing Business As (DBA) Name (if applicable)</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="businessStructure"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Structure</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select business structure" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Sole Proprietorship">Sole Proprietorship</SelectItem>
-                        <SelectItem value="Partnership">Partnership</SelectItem>
-                        <SelectItem value="LLC">Limited Liability Company (LLC)</SelectItem>
-                        <SelectItem value="Corporation">Corporation</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {form.watch("businessStructure") === "Other" && (
+            )}
+            <FormField
+              control={form.control}
+              name="dateOfIncorporation"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Date of Incorporation/Formation</FormLabel>
+                  <FormControl>
+                    <Input type="date" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="countryOfIncorporation"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Country of Incorporation</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="businessRegistrationNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Business Registration Number</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="taxIdentificationNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Tax Identification Number (EIN/TIN)</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="industry"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Industry/Nature of Business</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="registeredBusinessAddress"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Registered Business Address</FormLabel>
+                  <FormControl>
+                    <Textarea {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="principalPlaceOfBusiness"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Principal Place of Business (if different)</FormLabel>
+                  <FormControl>
+                    <Textarea {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="businessPhoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Business Phone Number</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="businessEmailAddress"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Business Email Address</FormLabel>
+                  <FormControl>
+                    <Input type="email" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="businessWebsite"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Business Website (if applicable)</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={nextStep}>
+              Next
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
+
+      {currentStep === 2 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Ownership Information</CardTitle>
+            <CardDescription>Please provide details for each owner with 25% or more ownership</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="numberOfOwners"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Number of Owners/Shareholders</FormLabel>
+                  <FormControl>
+                    <Input type="number" {...field} onChange={(e) => field.onChange(Number.parseInt(e.target.value))} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {[...Array(form.watch("numberOfOwners") || 0)].map((_, index) => (
+              <div key={index} className="space-y-4 border p-4 rounded">
                 <FormField
                   control={form.control}
-                  name="otherBusinessStructure"
+                  name={`owners.${index}.fullName`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Other Business Structure</FormLabel>
+                      <FormLabel>Full Name</FormLabel>
                       <FormControl>
                         <Input {...field} />
                       </FormControl>
@@ -247,175 +421,177 @@ Our team will review your application and contact you within 2-3 business days.`
                     </FormItem>
                   )}
                 />
-              )}
-              <FormField
-                control={form.control}
-                name="dateOfIncorporation"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Date of Incorporation/Formation</FormLabel>
-                    <FormControl>
-                      <Input type="date" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="countryOfIncorporation"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Country of Incorporation</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="businessRegistrationNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Registration Number</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="taxIdentificationNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Tax Identification Number (EIN/TIN)</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="industry"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Industry/Nature of Business</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="registeredBusinessAddress"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Registered Business Address</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="principalPlaceOfBusiness"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Principal Place of Business (if different)</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="businessPhoneNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Phone Number</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="businessEmailAddress"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Email Address</FormLabel>
-                    <FormControl>
-                      <Input type="email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="businessWebsite"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Website (if applicable)</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={nextStep}>
-                Next
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.dateOfBirth`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Date of Birth</FormLabel>
+                      <FormControl>
+                        <Input type="date" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.nationality`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nationality</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.residentialAddress`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Residential Address</FormLabel>
+                      <FormControl>
+                        <Textarea {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.ownershipPercentage`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Ownership Percentage</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          {...field}
+                          onChange={(e) => field.onChange(Number.parseFloat(e.target.value))}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.governmentIssuedIdNumber`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Government-issued ID Number</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name={`owners.${index}.idType`}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>ID Type</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select ID type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="Passport">Passport</SelectItem>
+                          <SelectItem value="Driver's License">Driver's License</SelectItem>
+                          <SelectItem value="National ID">National ID</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            ))}
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={prevStep} className="mr-2">
+              Previous
+            </Button>
+            <Button type="button" onClick={nextStep}>
+              Next
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
 
-        {currentStep === 2 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Ownership Information</CardTitle>
-              <CardDescription>Please provide details for each owner with 25% or more ownership</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <FormField
-                control={form.control}
-                name="numberOfOwners"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Number of Owners/Shareholders</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        {...field}
-                        onChange={(e) => field.onChange(Number.parseInt(e.target.value))}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {[...Array(form.watch("numberOfOwners") || 0)].map((_, index) => (
-                <div key={index} className="space-y-4 border p-4 rounded">
+      {currentStep === 3 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Management Information</CardTitle>
+            <CardDescription>Please provide details about the management and authorized signatories</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="primaryContactPerson"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Primary Contact Person</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="primaryContactPosition"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Position/Title</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="primaryContactPhone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="primaryContactEmail"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email Address</FormLabel>
+                  <FormControl>
+                    <Input type="email" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <div>
+              <h4 className="font-medium mb-2">List of Authorized Signatories</h4>
+              {form.watch("authorizedSignatories")?.map((_, index) => (
+                <div key={index} className="space-y-4 border p-4 rounded mb-4">
                   <FormField
                     control={form.control}
-                    name={`owners.${index}.fullName`}
+                    name={`authorizedSignatories.${index}.fullName`}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
@@ -428,324 +604,116 @@ Our team will review your application and contact you within 2-3 business days.`
                   />
                   <FormField
                     control={form.control}
-                    name={`owners.${index}.dateOfBirth`}
+                    name={`authorizedSignatories.${index}.position`}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Date of Birth</FormLabel>
-                        <FormControl>
-                          <Input type="date" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`owners.${index}.nationality`}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nationality</FormLabel>
+                        <FormLabel>Position/Title</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`owners.${index}.residentialAddress`}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Residential Address</FormLabel>
-                        <FormControl>
-                          <Textarea {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`owners.${index}.ownershipPercentage`}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Ownership Percentage</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            {...field}
-                            onChange={(e) => field.onChange(Number.parseFloat(e.target.value))}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`owners.${index}.governmentIssuedIdNumber`}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Government-issued ID Number</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`owners.${index}.idType`}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>ID Type</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select ID type" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="Passport">Passport</SelectItem>
-                            <SelectItem value="Driver's License">Driver's License</SelectItem>
-                            <SelectItem value="National ID">National ID</SelectItem>
-                          </SelectContent>
-                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
               ))}
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={prevStep} className="mr-2">
-                Previous
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  const currentSignatories = form.getValues("authorizedSignatories") || []
+                  form.setValue("authorizedSignatories", [...currentSignatories, {}])
+                }}
+              >
+                Add Another Signatory
               </Button>
-              <Button type="button" onClick={nextStep}>
-                Next
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={prevStep} className="mr-2">
+              Previous
+            </Button>
+            <Button type="button" onClick={nextStep}>
+              Next
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
 
-        {currentStep === 3 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Management Information</CardTitle>
-              <CardDescription>Please provide details about the management and authorized signatories</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <FormField
-                control={form.control}
-                name="primaryContactPerson"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Primary Contact Person</FormLabel>
+      {currentStep === 4 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Account Information</CardTitle>
+            <CardDescription>Please provide details about the requested account</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="accountType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Type of Account Requested</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <Input {...field} />
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select account type" />
+                      </SelectTrigger>
                     </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="primaryContactPosition"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Position/Title</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="primaryContactPhone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="primaryContactEmail"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email Address</FormLabel>
-                    <FormControl>
-                      <Input type="email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <div>
-                <h4 className="font-medium mb-2">List of Authorized Signatories</h4>
-                {form.watch("authorizedSignatories")?.map((_, index) => (
-                  <div key={index} className="space-y-4 border p-4 rounded mb-4">
-                    <FormField
-                      control={form.control}
-                      name={`authorizedSignatories.${index}.fullName`}
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name={`authorizedSignatories.${index}.position`}
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Position/Title</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                ))}
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => {
-                    const currentSignatories = form.getValues("authorizedSignatories") || []
-                    form.setValue("authorizedSignatories", [...currentSignatories, {}])
-                  }}
-                >
-                  Add Another Signatory
-                </Button>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={prevStep} className="mr-2">
-                Previous
-              </Button>
-              <Button type="button" onClick={nextStep}>
-                Next
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
-
-        {currentStep === 4 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Account Information</CardTitle>
-              <CardDescription>Please provide details about the requested account</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <FormField
-                control={form.control}
-                name="accountType"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Type of Account Requested</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select account type" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Business Checking">Business Checking</SelectItem>
-                        <SelectItem value="Business Savings">Business Savings</SelectItem>
-                        <SelectItem value="Merchant Services">Merchant Services</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {form.watch("accountType") === "Other" && (
-                <FormField
-                  control={form.control}
-                  name="otherAccountType"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Other Account Type</FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                    <SelectContent>
+                      <SelectItem value="Business Checking">Business Checking</SelectItem>
+                      <SelectItem value="Business Savings">Business Savings</SelectItem>
+                      <SelectItem value="Merchant Services">Merchant Services</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
               )}
+            />
+            {form.watch("accountType") === "Other" && (
               <FormField
                 control={form.control}
-                name="currency"
+                name="otherAccountType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Currency</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select currency" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="USD">USD</SelectItem>
-                        <SelectItem value="EUR">EUR</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <FormLabel>Other Account Type</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              {form.watch("currency") === "Other" && (
-                <FormField
-                  control={form.control}
-                  name="otherCurrency"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Other Currency</FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+            )}
+            <FormField
+              control={form.control}
+              name="currency"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Currency</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select currency" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="USD">USD</SelectItem>
+                      <SelectItem value="EUR">EUR</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
               )}
+            />
+            {form.watch("currency") === "Other" && (
               <FormField
                 control={form.control}
-                name="purposeOfAccount"
+                name="otherCurrency"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Purpose of Account</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="anticipatedMonthlyTransactionVolume"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Anticipated Monthly Transaction Volume</FormLabel>
+                    <FormLabel>Other Currency</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -753,280 +721,304 @@ Our team will review your application and contact you within 2-3 business days.`
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="sourceOfFunds"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Source of Funds</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={prevStep} className="mr-2">
-                Previous
-              </Button>
-              <Button type="button" onClick={nextStep}>
-                Next
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
+            )}
+            <FormField
+              control={form.control}
+              name="purposeOfAccount"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Purpose of Account</FormLabel>
+                  <FormControl>
+                    <Textarea {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="anticipatedMonthlyTransactionVolume"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Anticipated Monthly Transaction Volume</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="sourceOfFunds"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Source of Funds</FormLabel>
+                  <FormControl>
+                    <Textarea {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={prevStep} className="mr-2">
+              Previous
+            </Button>
+            <Button type="button" onClick={nextStep}>
+              Next
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
 
-        {currentStep === 5 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Additional Documentation</CardTitle>
-              <CardDescription>Please confirm that you have the following documents ready to submit</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.certificateOfIncorporation"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Certificate of Incorporation/Formation</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.articlesOfAssociation"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Articles of Association/Organization</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.businessLicense"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Business License/Permit</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.proofOfBusinessAddress"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Proof of Business Address</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.taxRegistrationCertificate"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Tax Registration Certificate</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.financialStatements"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Financial Statements (last 2 years, if applicable)</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.proofOfIdentity"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Proof of Identity for all owners and authorized signatories</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.proofOfAddress"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Proof of Address for all owners and authorized signatories</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.organizationalChart"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Organizational Chart (for complex ownership structures)</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="documentationChecklist.beneficialOwnershipDeclaration"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel>Beneficial Ownership Declaration Form</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={prevStep} className="mr-2">
-                Previous
-              </Button>
-              <Button type="button" onClick={nextStep}>
-                Next
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
+      {currentStep === 5 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Additional Documentation</CardTitle>
+            <CardDescription>Please confirm that you have the following documents ready to submit</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="documentationChecklist.certificateOfIncorporation"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Certificate of Incorporation/Formation</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.articlesOfAssociation"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Articles of Association/Organization</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.businessLicense"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Business License/Permit</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.proofOfBusinessAddress"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Proof of Business Address</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.taxRegistrationCertificate"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Tax Registration Certificate</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.financialStatements"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Financial Statements (last 2 years, if applicable)</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.proofOfIdentity"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Proof of Identity for all owners and authorized signatories</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.proofOfAddress"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Proof of Address for all owners and authorized signatories</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.organizationalChart"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Organizational Chart (for complex ownership structures)</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="documentationChecklist.beneficialOwnershipDeclaration"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>Beneficial Ownership Declaration Form</FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={prevStep} className="mr-2">
+              Previous
+            </Button>
+            <Button type="button" onClick={nextStep}>
+              Next
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
 
-        {currentStep === 6 && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Declarations</CardTitle>
-              <CardDescription>Please read and sign the following declarations</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <p>By signing below, I/we certify that:</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>
-                    All information provided in this form and accompanying documents is true, accurate, and complete.
-                  </li>
-                  <li>I/We have the authority to open this account on behalf of the business.</li>
-                  <li>I/We agree to notify the bank promptly of any changes to the information provided.</li>
-                  <li>
-                    I/We consent to the bank conducting necessary checks and verifications as part of the Know Your
-                    Business (KYB) process.
-                  </li>
-                  <li>
-                    I/We have read, understood, and agree to the bank's terms and conditions for business accounts.
-                  </li>
-                </ul>
-              </div>
-              <FormField
-                control={form.control}
-                name="declarationSignature"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Signature of Authorized Representative</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="declarationFullName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Full Name</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="declarationPosition"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Position/Title</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="declarationDate"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Date</FormLabel>
-                    <FormControl>
-                      <Input type="date" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </CardContent>
-            <CardFooter>
-              <Button type="button" onClick={prevStep} className="mr-2">
-                Previous
-              </Button>
-              <Button type="submit" disabled={isGeneratingPDF}>
-                {isGeneratingPDF ? "Generating PDF..." : "Submit Application"}
-              </Button>
-            </CardFooter>
-          </Card>
-        )}
-      </form>
+      {currentStep === 6 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Declarations</CardTitle>
+            <CardDescription>Please read and sign the following declarations</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <p>By signing below, I/we certify that:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  All information provided in this form and accompanying documents is true, accurate, and complete.
+                </li>
+                <li>I/We have the authority to open this account on behalf of the business.</li>
+                <li>I/We agree to notify the bank promptly of any changes to the information provided.</li>
+                <li>
+                  I/We consent to the bank conducting necessary checks and verifications as part of the Know Your
+                  Business (KYB) process.
+                </li>
+                <li>I/We have read, understood, and agree to the bank's terms and conditions for business accounts.</li>
+              </ul>
+            </div>
+            <FormField
+              control={form.control}
+              name="declarationSignature"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Signature of Authorized Representative</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="declarationFullName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="declarationPosition"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Position/Title</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="declarationDate"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Date</FormLabel>
+                  <FormControl>
+                    <Input type="date" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter>
+            <Button type="button" onClick={prevStep} className="mr-2">
+              Previous
+            </Button>
+            <Button type="submit" disabled={isGeneratingPDF}>
+              {isGeneratingPDF ? "Generating PDF..." : "Submit Application"}
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
     </Form>
   )
 }

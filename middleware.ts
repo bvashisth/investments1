@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
 
   const cspHeader = `
     default-src 'self';
-    script-src 'self' https://fermionemp.com 'unsafe-inline';
+    script-src 'self' https://fiblimited.com 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://*.vercel-storage.com;
     font-src 'self';
@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
-    connect-src 'self' https://business.fermionemp.com https://support.fermionemp.com;
+    connect-src 'self' https://business.fiblimited.com https://support.fiblimited.com;
   `
     .replace(/\s{2,}/g, " ")
     .trim()
@@ -58,6 +58,12 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    {
+      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      missing: [
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
   ],
 }

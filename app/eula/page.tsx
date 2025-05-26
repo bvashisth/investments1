@@ -1,4 +1,4 @@
-import { EULA } from "@/components/EULA"
+import { EULA } from '@/components/EULA'
 
 export default function EULAPage() {
   return (

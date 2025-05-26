@@ -63,7 +63,7 @@ export default function PersonalAccountForm() {
     // Show success message
     alert(`Your personal account application has been generated as a PDF. 
 
-Please email the following to accounts@fermionemp.com:
+Please email the following to accounts@sparco.db:
 1. The downloaded PDF application form
 2. Valid Government-issued ID (Passport/Driver's License/National ID)
 3. Proof of Address (utility bill/bank statement, less than 3 months old)

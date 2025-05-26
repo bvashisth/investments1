@@ -27,9 +27,9 @@ export function FinancialEducationModal() {
             Financial Education: Empowering Through Knowledge
           </DialogTitle>
           <DialogDescription className="text-[#4a4749]">
-            At FermionEMP, we believe financial literacy is the foundation for economic empowerment. That's why we offer
-            a range of workshops and resources designed to improve financial understanding for individuals, families,
-            and small business owners.
+            At SparcoDB, we believe financial literacy is the foundation for economic empowerment. That's why we offer a
+            range of workshops and resources designed to improve financial understanding for individuals, families, and
+            small business owners.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-6 py-4">
@@ -69,7 +69,7 @@ export function FinancialEducationModal() {
         </div>
         <div className="mt-6">
           <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">
-            FermionEMP: Building Financial Confidence, One Step at a Time
+            SparcoDB: Building Financial Confidence, One Step at a Time
           </h3>
           <p className="text-[#4a4749]">
             Join us in our mission to improve financial literacy and create a more financially empowered world.

@@ -12,7 +12,7 @@ export default function OurMissionPage() {
         </CardHeader>
         <CardContent>
           <p className="mb-4">
-            At FermionEMP, our mission is to empower underbanked and unbanked communities worldwide by offering
+            At SparcoDB, our mission is to empower underbanked and unbanked communities worldwide by offering
             innovative, affordable, and accessible financial solutions. We are dedicated to fostering economic growth,
             uplifting local economies, and creating sustainable opportunities for individuals and businesses globally.
           </p>
@@ -50,7 +50,7 @@ export default function OurMissionPage() {
           <CardTitle>Our Commitment</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="mb-4">FermionEMP is committed to:</p>
+          <p className="mb-4">SparcoDB is committed to:</p>
           <ul className="list-disc pl-5 mb-4">
             <li>Developing tailored financial products that meet the unique needs of underserved communities</li>
             <li>Investing in financial education to empower individuals and businesses</li>

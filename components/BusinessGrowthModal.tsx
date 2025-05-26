@@ -27,7 +27,7 @@ export function BusinessGrowthModal() {
             Business Growth: Empowering Small Businesses for Success
           </DialogTitle>
           <DialogDescription className="text-[#4a4749]">
-            At FermionEMP, we are dedicated to driving economic growth by empowering small businesses—the backbone of
+            At SparcoDB, we are dedicated to driving economic growth by empowering small businesses—the backbone of
             thriving communities. Our tailored financial services provide the tools and resources entrepreneurs need to
             succeed.
           </DialogDescription>
@@ -69,7 +69,7 @@ export function BusinessGrowthModal() {
             <div>
               <h4 className="font-semibold text-[#2d2a2e] text-lg">Comprehensive Support</h4>
               <p className="text-sm text-[#4a4749]">
-                Whether it's helping a local shop scale operations or supporting a tech startup launch, FermionEMP is
+                Whether it's helping a local shop scale operations or supporting a tech startup launch, SparcoDB is
                 committed to fostering innovation, creating jobs, and uplifting communities through small business
                 success.
               </p>
@@ -77,7 +77,7 @@ export function BusinessGrowthModal() {
           </div>
         </div>
         <div className="mt-6">
-          <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">FermionEMP: Building Better Businesses, Together</h3>
+          <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">SparcoDB: Building Better Businesses, Together</h3>
           <p className="text-[#4a4749]">
             Join us in our mission to empower small businesses and drive economic growth in communities worldwide.
           </p>

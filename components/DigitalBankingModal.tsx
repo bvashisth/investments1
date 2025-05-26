@@ -27,7 +27,7 @@ export function DigitalBankingModal() {
             Digital Banking: Modern Solutions for a Connected World
           </DialogTitle>
           <DialogDescription className="text-[#4a4749]">
-            At FermionEMP, we redefine convenience with our cutting-edge digital banking services, designed to make
+            At SparcoDB, we redefine convenience with our cutting-edge digital banking services, designed to make
             managing your finances simple, secure, and accessible. Whether you're at home, at work, or on the go, our
             mobile and web platforms empower you to take control of your financial journey anytime, anywhere.
           </DialogDescription>
@@ -99,14 +99,14 @@ export function DigitalBankingModal() {
             <div>
               <h4 className="font-semibold text-[#2d2a2e] text-lg">Banking Without Boundaries</h4>
               <p className="text-sm text-[#4a4749]">
-                Say goodbye to long lines and rigid schedules. FermionEMP's digital banking solutions let you handle
-                your finances with speed and flexibility, so you can focus on what truly matters.
+                Say goodbye to long lines and rigid schedules. SparcoDB's digital banking solutions let you handle your
+                finances with speed and flexibility, so you can focus on what truly matters.
               </p>
             </div>
           </div>
         </div>
         <div className="mt-6">
-          <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">FermionEMP: Banking Made Effortless</h3>
+          <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">SparcoDB: Banking Made Effortless</h3>
           <p className="text-[#4a4749]">
             Discover the freedom of modern banking tailored to your needs. Join us and experience the future of finance
             today.

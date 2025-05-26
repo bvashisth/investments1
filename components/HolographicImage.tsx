@@ -1,9 +1,9 @@
 "use client"
 
-import { useRef, useEffect } from "react"
-import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
-import * as THREE from "three"
+import { useRef, useEffect } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import * as THREE from 'three'
 
 function HolographicLines() {
   const linesRef = useRef<THREE.Group>(null)
@@ -18,7 +18,7 @@ function HolographicLines() {
           new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4),
           new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4),
           new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4),
-          new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4),
+          new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4)
         )
         const points = curve.getPoints(50)
         geometry.setFromPoints(points)

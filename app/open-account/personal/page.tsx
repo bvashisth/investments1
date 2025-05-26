@@ -1,4 +1,4 @@
-import PersonalAccountForm from "@/components/PersonalAccountForm"
+import PersonalAccountForm from '@/components/PersonalAccountForm'
 
 export default function PersonalAccountOpeningPage() {
   return (

@@ -27,7 +27,7 @@ export function InfrastructureDevelopmentModal() {
             Infrastructure Development: Building Foundations for Growth
           </DialogTitle>
           <DialogDescription className="text-[#4a4749]">
-            At FermionEMP, we understand that thriving communities require more than financial support—they need strong
+            At SparcoDB, we understand that thriving communities require more than financial support—they need strong
             infrastructure to foster sustainable growth. That's why we invest in developing community facilities and
             training centers that empower individuals and businesses alike.
           </DialogDescription>
@@ -61,7 +61,7 @@ export function InfrastructureDevelopmentModal() {
             <div>
               <h4 className="font-semibold text-[#2d2a2e] text-lg">Sustainable Growth</h4>
               <p className="text-sm text-[#4a4749]">
-                FermionEMP is committed to building stronger, more resilient communities by focusing on the foundations
+                Fiblimited is committed to building stronger, more resilient communities by focusing on the foundations
                 that matter most. Our infrastructure development initiatives aim to create lasting impact and foster
                 sustainable economic growth.
               </p>
@@ -70,7 +70,7 @@ export function InfrastructureDevelopmentModal() {
         </div>
         <div className="mt-6">
           <h3 className="font-bold text-[#2d2a2e] text-xl mb-2">
-            FermionEMP: Empowering Communities Through Infrastructure and Opportunity
+            SparcoDB: Empowering Communities Through Infrastructure and Opportunity
           </h3>
           <p className="text-[#4a4749]">
             Join us in our mission to build the foundations for thriving communities and sustainable economic growth.

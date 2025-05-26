@@ -1,4 +1,4 @@
-import BusinessAccountForm from "@/components/BusinessAccountForm"
+import BusinessAccountForm from '@/components/BusinessAccountForm'
 
 export default function BusinessAccountOpeningPage() {
   return (

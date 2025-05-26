@@ -18,15 +18,13 @@ export async function POST(req: Request) {
   try {
     // Send email
     await transporter.sendMail({
-      from: `"Lao construction Bank Contact Form" <${process.env.SMTP_USER}>`,
-      to: "support@example.com", // Replace with the actual LCB support email
+      from: `"SparcoDB Contact Form" <${process.env.SMTP_USER}>`,
+      to: "support@sparco.db",
       subject: "New Contact Form Submission",
-      text: `Name: ${name}
-Email: ${email}
-Message: ${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `<p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong> ${message}</p>`,
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
     })
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 })
